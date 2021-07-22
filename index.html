@@ -6,58 +6,21 @@
 </head>
 <body>
     <input type="button" onClick="sendLinkCustom();" value="Custom"/>
-    <input type="button" onClick="sendLinkDefault();" value="Default"/>
+ 
 
 <script type="text/javascript">
     function sendLinkCustom() {
         Kakao.init("d3a0f1a7d8fd4af7c274256490a5fd77");
         Kakao.Link.sendCustom({
-            templateId: [57539]
+            templateId: 57539,
+			    templateArgs: {
+      title:
+        '판교 맛집에 들르다. 다양하고 풍부한 퓨전 한정식. 깔끔한 내부 인테리어 라이언',
+      description:
+        '부담없는 가격에 푸짐하게 즐기는 점심메뉴 런치한정식, 불고기정식, 돼지 김치찌개 등',
+    },
         });
     }
-</script>
-
-<script>
-try {
-  function sendLinkDefault() {
-    Kakao.init('d3a0f1a7d8fd4af7c274256490a5fd77')
-    Kakao.Link.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '딸기 치즈 케익',
-        description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
-        imageUrl:
-          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-        link: {
-          mobileWebUrl: 'https://developers.kakao.com',
-          webUrl: 'https://developers.kakao.com',
-        },
-      },
-      social: {
-        likeCount: 286,
-        commentCount: 45,
-        sharedCount: 845,
-      },
-      buttons: [
-        {
-          title: '웹으로 보기',
-          link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-            webUrl: 'https://developers.kakao.com',
-          },
-        },
-        {
-          title: '앱으로 보기',
-          link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-            webUrl: 'https://developers.kakao.com',
-          },
-        },
-      ],
-    })
-  }
-; window.kakaoDemoCallback && window.kakaoDemoCallback() }
-catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 </script>
    
 </body>
